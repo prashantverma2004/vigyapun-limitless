@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B0B0C"/>
+      <stop offset="0.55" stop-color="#121110"/>
+      <stop offset="1" stop-color="#0A0A0A"/>
+    </linearGradient>
+    <radialGradient id="warmGlow" cx="960" cy="560" r="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#C8B8A0" stop-opacity="0.22"/>
+      <stop offset="0.45" stop-color="#8A7A64" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#0A0A0A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="coolGlow" cx="1620" cy="160" r="620" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5E6E86" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#0A0A0A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="coolGlowLeft" cx="220" cy="920" r="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4A5568" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#0A0A0A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="floorFade" x1="0" y1="620" x2="0" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#fff" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="1"/>
+    </linearGradient>
+    <mask id="floorMask">
+      <rect x="0" y="620" width="1920" height="460" fill="url(#floorFade)"/>
+    </mask>
+    <linearGradient id="growth" x1="0" y1="0" x2="1920" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#C8B8A0" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#C8B8A0" stop-opacity="0.55"/>
+      <stop offset="0.75" stop-color="#E8E0D8" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#E8E0D8" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="growthArea" x1="0" y1="300" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#C8B8A0" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#C8B8A0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E8E0D8" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#E8E0D8" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#E8E0D8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C8B8A0" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#C8B8A0" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base and ambient light -->
+  <rect width="1920" height="1080" fill="url(#base)"/>
+  <rect width="1920" height="1080" fill="url(#coolGlow)"/>
+  <rect width="1920" height="1080" fill="url(#coolGlowLeft)"/>
+  <rect width="1920" height="1080" fill="url(#warmGlow)"/>
+
+  <!-- Diagonal light beams -->
+  <g transform="rotate(-24 960 540)">
+    <rect x="-200" y="250" width="2400" height="90" fill="url(#beam)"/>
+    <rect x="-200" y="420" width="2400" height="26" fill="url(#beam)"/>
+  </g>
+
+  <!-- Perspective grid floor -->
+  <g mask="url(#floorMask)" stroke="#C8B8A0" stroke-opacity="0.22" stroke-width="1" fill="none">
+    <line x1="0" y1="640" x2="1920" y2="640"/>
+    <line x1="0" y1="662" x2="1920" y2="662"/>
+    <line x1="0" y1="692" x2="1920" y2="692"/>
+    <line x1="0" y1="734" x2="1920" y2="734"/>
+    <line x1="0" y1="792" x2="1920" y2="792"/>
+    <line x1="0" y1="872" x2="1920" y2="872"/>
+    <line x1="0" y1="984" x2="1920" y2="984"/>
+    <path d="M960 620 L-1440 1080 M960 620 L-960 1080 M960 620 L-480 1080 M960 620 L0 1080 M960 620 L480 1080 M960 620 L960 1080 M960 620 L1440 1080 M960 620 L1920 1080 M960 620 L2400 1080 M960 620 L2880 1080 M960 620 L3360 1080"/>
+  </g>
+
+  <!-- Concentric orbit rings -->
+  <g fill="none" stroke="#C8B8A0">
+    <circle cx="960" cy="540" r="230" stroke-opacity="0.10"/>
+    <circle cx="960" cy="540" r="360" stroke-opacity="0.08" stroke-dasharray="2 10"/>
+    <circle cx="960" cy="540" r="500" stroke-opacity="0.06"/>
+    <circle cx="960" cy="540" r="660" stroke-opacity="0.05" stroke-dasharray="1 14"/>
+  </g>
+  <circle cx="1320" cy="290" r="3" fill="#E8E0D8" fill-opacity="0.6"/>
+  <circle cx="610" cy="760" r="2.5" fill="#E8E0D8" fill-opacity="0.45"/>
+  <circle cx="1455" cy="700" r="2" fill="#E8E0D8" fill-opacity="0.35"/>
+
+  <!-- Analytics columns -->
+  <g fill="url(#bar)">
+    <rect x="120" y="700" width="34" height="380"/>
+    <rect x="174" y="640" width="34" height="440"/>
+    <rect x="228" y="580" width="34" height="500"/>
+    <rect x="282" y="660" width="34" height="420"/>
+    <rect x="1604" y="560" width="34" height="520"/>
+    <rect x="1658" y="480" width="34" height="600"/>
+    <rect x="1712" y="400" width="34" height="680"/>
+    <rect x="1766" y="330" width="34" height="750"/>
+  </g>
+
+  <!-- Growth curve -->
+  <path d="M0 880 C 220 860, 360 820, 520 790 S 820 760, 980 690 S 1260 560, 1420 470 S 1720 300, 1920 250 L1920 1080 L0 1080 Z" fill="url(#growthArea)"/>
+  <path d="M0 880 C 220 860, 360 820, 520 790 S 820 760, 980 690 S 1260 560, 1420 470 S 1720 300, 1920 250" fill="none" stroke="url(#growth)" stroke-width="2"/>
+  <g fill="#0A0A0A" stroke="#E8E0D8" stroke-width="1.5">
+    <circle cx="520" cy="790" r="5" stroke-opacity="0.5"/>
+    <circle cx="980" cy="690" r="5" stroke-opacity="0.65"/>
+    <circle cx="1420" cy="470" r="6" stroke-opacity="0.85"/>
+  </g>
+  <circle cx="1420" cy="470" r="18" fill="none" stroke="#E8E0D8" stroke-opacity="0.18"/>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A1714" stop-opacity="0.9"/><stop offset="1" stop-color="#0E0D0C" stop-opacity="0.9"/></linearGradient>
+<radialGradient id="glow" cx="960" cy="540" r="800" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#D9B37A" stop-opacity="0.10"/><stop offset="1" stop-color="#0A0A0A" stop-opacity="0"/></radialGradient>
+<radialGradient id="cool" cx="1750" cy="80" r="700" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3E4A5E" stop-opacity="0.16"/><stop offset="1" stop-color="#0A0A0A" stop-opacity="0"/></radialGradient></defs>
+<rect width="1920" height="1080" fill="#0A0A0A"/><rect width="1920" height="1080" fill="url(#cool)"/><rect width="1920" height="1080" fill="url(#glow)"/>
+<g transform="rotate(-6 240.0 215.0)">
+<rect x="90" y="120" width="300" height="190" rx="8" fill="url(#card)" stroke="#C8B8A0" stroke-opacity="0.16" stroke-width="1.2"/>
+<rect x="108" y="138" width="135" height="8" rx="4" fill="#C8B8A0" fill-opacity="0.12"/>
+<rect x="108" y="156" width="90" height="6" rx="3" fill="#C8B8A0" fill-opacity="0.07"/>
+<polyline points="108,286 195,260 270,270 366,230" fill="none" stroke="#C8B8A0" stroke-opacity="0.18" stroke-width="1.5"/>
+</g><g transform="rotate(4 280.0 502.5)">
+<rect x="150" y="420" width="260" height="165" rx="8" fill="url(#card)" stroke="#C8B8A0" stroke-opacity="0.16" stroke-width="1.2"/>
+<rect x="168" y="438" width="117" height="8" rx="4" fill="#C8B8A0" fill-opacity="0.12"/>
+<rect x="168" y="456" width="78" height="6" rx="3" fill="#C8B8A0" fill-opacity="0.07"/>
+<polyline points="168,561 241,535 306,545 386,505" fill="none" stroke="#C8B8A0" stroke-opacity="0.18" stroke-width="1.5"/>
+</g><g transform="rotate(-3 230.0 827.5)">
+<rect x="60" y="720" width="340" height="215" rx="8" fill="url(#card)" stroke="#F3D39A" stroke-opacity="0.4" stroke-width="1.2"/>
+<rect x="78" y="738" width="153" height="8" rx="4" fill="#C8B8A0" fill-opacity="0.12"/>
+<rect x="78" y="756" width="102" height="6" rx="3" fill="#C8B8A0" fill-opacity="0.07"/>
+<polyline points="78,911 179,885 264,895 376,855" fill="none" stroke="#F3D39A" stroke-opacity="0.45" stroke-width="1.5"/>
+</g><g transform="rotate(6 560.0 947.5)">
+<rect x="420" y="860" width="280" height="175" rx="8" fill="url(#card)" stroke="#C8B8A0" stroke-opacity="0.16" stroke-width="1.2"/>
+<rect x="438" y="878" width="126" height="8" rx="4" fill="#C8B8A0" fill-opacity="0.12"/>
+<rect x="438" y="896" width="84" height="6" rx="3" fill="#C8B8A0" fill-opacity="0.07"/>
+<polyline points="438,1011 518,985 588,995 676,955" fill="none" stroke="#C8B8A0" stroke-opacity="0.18" stroke-width="1.5"/>
+</g><g transform="rotate(5 1660.0 210.0)">
+<rect x="1500" y="110" width="320" height="200" rx="8" fill="url(#card)" stroke="#F3D39A" stroke-opacity="0.4" stroke-width="1.2"/>
+<rect x="1518" y="128" width="144" height="8" rx="4" fill="#C8B8A0" fill-opacity="0.12"/>
+<rect x="1518" y="146" width="96" height="6" rx="3" fill="#C8B8A0" fill-opacity="0.07"/>
+<polyline points="1518,286 1612,260 1692,270 1796,230" fill="none" stroke="#F3D39A" stroke-opacity="0.45" stroke-width="1.5"/>
+</g><g transform="rotate(-4 1715.0 515.0)">
+<rect x="1580" y="430" width="270" height="170" rx="8" fill="url(#card)" stroke="#C8B8A0" stroke-opacity="0.16" stroke-width="1.2"/>
+<rect x="1598" y="448" width="122" height="8" rx="4" fill="#C8B8A0" fill-opacity="0.12"/>
+<rect x="1598" y="466" width="81" height="6" rx="3" fill="#C8B8A0" fill-opacity="0.07"/>
+<polyline points="1598,576 1674,550 1742,560 1826,520" fill="none" stroke="#C8B8A0" stroke-opacity="0.18" stroke-width="1.5"/>
+</g><g transform="rotate(3 1645.0 835.0)">
+<rect x="1480" y="730" width="330" height="210" rx="8" fill="url(#card)" stroke="#C8B8A0" stroke-opacity="0.16" stroke-width="1.2"/>
+<rect x="1498" y="748" width="148" height="8" rx="4" fill="#C8B8A0" fill-opacity="0.12"/>
+<rect x="1498" y="766" width="99" height="6" rx="3" fill="#C8B8A0" fill-opacity="0.07"/>
+<polyline points="1498,916 1596,890 1678,900 1786,860" fill="none" stroke="#C8B8A0" stroke-opacity="0.18" stroke-width="1.5"/>
+</g><g transform="rotate(-6 1320.0 957.5)">
+<rect x="1180" y="870" width="280" height="175" rx="8" fill="url(#card)" stroke="#C8B8A0" stroke-opacity="0.16" stroke-width="1.2"/>
+<rect x="1198" y="888" width="126" height="8" rx="4" fill="#C8B8A0" fill-opacity="0.12"/>
+<rect x="1198" y="906" width="84" height="6" rx="3" fill="#C8B8A0" fill-opacity="0.07"/>
+<polyline points="1198,1021 1278,995 1348,1005 1436,965" fill="none" stroke="#C8B8A0" stroke-opacity="0.18" stroke-width="1.5"/>
+</g></svg>

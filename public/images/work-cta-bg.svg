@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="track" x1="0" y1="0" x2="1920" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#C8B8A0" stop-opacity="0.03"/><stop offset="1" stop-color="#F3D39A" stop-opacity="0.55"/></linearGradient>
+<radialGradient id="spot" cx="1480" cy="690" r="520" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#D9B37A" stop-opacity="0.30"/><stop offset="1" stop-color="#0A0A0A" stop-opacity="0"/></radialGradient>
+<radialGradient id="cool" cx="200" cy="80" r="700" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3E4A5E" stop-opacity="0.14"/><stop offset="1" stop-color="#0A0A0A" stop-opacity="0"/></radialGradient>
+<radialGradient id="calm" cx="960" cy="440" r="560" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0A0A0A" stop-opacity="0.7"/><stop offset="1" stop-color="#0A0A0A" stop-opacity="0"/></radialGradient>
+<filter id="soft"><feGaussianBlur stdDeviation="8"/></filter></defs>
+<rect width="1920" height="1080" fill="#0A0A0A"/><rect width="1920" height="1080" fill="url(#cool)"/><rect width="1920" height="1080" fill="url(#spot)"/>
+<line x1="0" y1="690" x2="1436" y2="690" stroke="url(#track)" stroke-width="1.5"/>
+<line x1="1524" y1="690" x2="1920" y2="690" stroke="#C8B8A0" stroke-opacity="0.06" stroke-dasharray="3 10"/>
+<circle cx="200" cy="690" r="10" fill="#1A1714" stroke="#C8B8A0" stroke-opacity="0.15" stroke-width="1.2"/><circle cx="200" cy="690" r="3" fill="#C8B8A0" fill-opacity="0.20"/><circle cx="470" cy="690" r="10" fill="#1A1714" stroke="#C8B8A0" stroke-opacity="0.20" stroke-width="1.2"/><circle cx="470" cy="690" r="3" fill="#C8B8A0" fill-opacity="0.26"/><circle cx="740" cy="690" r="10" fill="#1A1714" stroke="#C8B8A0" stroke-opacity="0.25" stroke-width="1.2"/><circle cx="740" cy="690" r="3" fill="#C8B8A0" fill-opacity="0.32"/><circle cx="1010" cy="690" r="10" fill="#1A1714" stroke="#C8B8A0" stroke-opacity="0.30" stroke-width="1.2"/><circle cx="1010" cy="690" r="3" fill="#C8B8A0" fill-opacity="0.38"/><circle cx="1280" cy="690" r="10" fill="#1A1714" stroke="#C8B8A0" stroke-opacity="0.35" stroke-width="1.2"/><circle cx="1280" cy="690" r="3" fill="#C8B8A0" fill-opacity="0.44"/>
+<circle cx="1480" cy="690" r="40" fill="none" stroke="#F3D39A" stroke-width="6" stroke-opacity="0.35" filter="url(#soft)"/>
+<circle cx="1480" cy="690" r="40" fill="none" stroke="#F3D39A" stroke-opacity="0.85" stroke-width="1.8"/>
+<circle cx="1480" cy="690" r="64" fill="none" stroke="#F3D39A" stroke-opacity="0.2" stroke-dasharray="2 8"/>
+<rect width="1920" height="1080" fill="url(#calm)"/></svg>
