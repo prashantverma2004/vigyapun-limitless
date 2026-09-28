@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CalendlyButton from "@/components/CalendlyButton";
@@ -8,6 +8,7 @@ import RevealText from "@/components/RevealText";
 import StatsGrid from "@/components/StatsGrid";
 import ParallaxImage from "@/components/ParallaxImage";
 import SectionBackground from "@/components/SectionBackground";
+import SaasIntro from "@/components/SaasIntro";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,6 +47,8 @@ export default function SaaSMarketing() {
   const heroRef = useRef<HTMLElement>(null);
   const heroTextRef = useRef<HTMLDivElement>(null);
   const heroBgRef = useRef<HTMLDivElement>(null);
+  const [introDone, setIntroDone] = useState(false);
+  const handleIntroComplete = useCallback(() => setIntroDone(true), []);
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -74,8 +77,18 @@ export default function SaaSMarketing() {
       },
     });
 
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
+
+  // Hero entrance plays once the motion intro hands off (or immediately if it's skipped/not shown).
+  useEffect(() => {
+    const heroText = heroTextRef.current;
+    if (!introDone || !heroText) return;
+
     const lines = heroText.querySelectorAll(".hero-line");
-    gsap.fromTo(
+    const tween = gsap.fromTo(
       lines,
       { y: 80, opacity: 0 },
       {
@@ -87,11 +100,10 @@ export default function SaaSMarketing() {
         delay: 0.2,
       }
     );
-
     return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      tween.kill();
     };
-  }, []);
+  }, [introDone]);
 
   return (
     <>
@@ -106,6 +118,8 @@ export default function SaaSMarketing() {
           style={{ backgroundImage: "url(/images/hero-saas-abstract.svg)" }}
         />
         <div className="absolute inset-0 bg-black/55" />
+
+        <SaasIntro onComplete={handleIntroComplete} />
 
         <div
           ref={heroTextRef}
@@ -146,52 +160,11 @@ export default function SaaSMarketing() {
         </div>
       </section>
 
-      {/* ─── Why SaaS Marketing is Different (The Problem) ─── */}
-      <section className="section-dark section-spacing w-full flex flex-col items-center justify-center relative overflow-hidden">
-        <SectionBackground src="/images/saas-problem-bg.svg" />
-        <div
-          className="container-vw relative z-10 flex flex-col items-center justify-center text-center"
-          style={{ maxWidth: "860px" }}
-        >
-          <RevealText className="flex flex-col items-center">
-            <p
-              className="text-label text-[var(--color-accent)] text-center"
-              style={{ marginBottom: "1.5rem" }}
-            >
-              THE PROBLEM
-            </p>
-          </RevealText>
-          <RevealText delay={0.1} className="flex flex-col items-center">
-            <h2
-              className="text-display-sm md:text-display-md text-white text-center max-w-3xl leading-tight"
-              style={{ marginBottom: "2rem" }}
-            >
-              SaaS marketing isn&apos;t B2C with a longer sales cycle.
-              It&apos;s a fundamentally different game.
-            </h2>
-          </RevealText>
-          <RevealText delay={0.2} className="flex flex-col items-center">
-            <p className="text-editorial text-[var(--color-light-gray)] text-center max-w-2xl leading-relaxed">
-              Most agencies treat SaaS like any other business. They run generic paid ads,
-              write SEO content that nobody reads, and call it &quot;growth strategy.&quot;
-              The result? Burnt budget, misaligned pipeline, and a board that&apos;s losing patience.
-            </p>
-          </RevealText>
-          <RevealText delay={0.3} className="flex flex-col items-center">
-            <p
-              className="text-editorial text-[var(--color-light-gray)] text-center max-w-2xl leading-relaxed"
-              style={{ marginTop: "1.5rem" }}
-            >
-              We built Vigyapun Limitless exclusively for SaaS. Every strategy, every campaign,
-              every creative asset is engineered for complex B2B buying journeys with multiple
-              stakeholders and 6-12 month sales cycles.
-            </p>
-          </RevealText>
-        </div>
-      </section>
-
       {/* ─── Three Pillars (Our Framework) ─── */}
-      <section className="section-dark py-24 sm:py-32 relative overflow-hidden">
+      <section
+        className="section-dark py-24 sm:py-32 relative overflow-hidden"
+        style={{ paddingTop: "clamp(4rem, 10vw, 10rem)" }}
+      >
         <SectionBackground src="/images/saas-pillars-bg.svg" />
         <div className="container-vw relative z-10 max-w-7xl mx-auto flex flex-col items-center justify-center text-center">
           <div className="max-w-2xl mx-auto mb-16 text-center flex flex-col items-center">

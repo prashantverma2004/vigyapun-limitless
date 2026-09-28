@@ -5,111 +5,86 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CalendlyButton from "@/components/CalendlyButton";
 import RevealText from "@/components/RevealText";
-import ServiceAccordion from "@/components/ServiceAccordion";
 import SectionBackground from "@/components/SectionBackground";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Card photos: Unsplash (free commercial use, https://unsplash.com/license) —
+// explainer 1614963326505-843868e1d83a, video-ads 1619850015746-bedcb4801700,
+// content 1694173966355-6a8048f91769, pitch-decks 1559223694-98ed5e272fef,
+// brand-visuals 1709377195538-5522ed0f9e10, strategy 1550239261-89b17e004488,
+// growth-catalyst 1727451139462-cd34008cd50b.
 const services = [
   {
     number: "01",
-    title: "Demand Generation",
-    description:
-      "We build full-funnel pipeline machines that turn cold audiences into qualified opportunities. Our demand gen strategies are designed specifically for long B2B sales cycles with multiple decision-makers.",
-    details: [
-      "ABM Campaigns",
-      "Paid Media (LinkedIn, Google, Meta)",
-      "Content Syndication",
-      "Email Nurture Sequences",
-      "Webinar Programs",
-      "Intent Data Activation",
+    title: "SaaS Intro & Explainer Videos",
+    items: [
+      "Product explainer videos",
+      "SaaS demo videos",
+      "Motion graphics",
+      "Feature-to-benefit storytelling",
+      "Product UI animation",
     ],
+    image: "/images/services/explainer.jpg",
   },
   {
     number: "02",
-    title: "Paid Media & Performance",
-    description:
-      "Precision-targeted advertising that reaches your ICP where they live. We manage multi-channel paid programs with relentless focus on pipeline contribution, not vanity metrics.",
-    details: [
-      "LinkedIn Ads",
-      "Google Ads (Search, Display, YouTube)",
-      "Meta Ads",
-      "Programmatic Display",
-      "Retargeting & ABM Display",
-      "Landing Page Optimization",
+    title: "Performance Video Ads",
+    items: [
+      "Ad creatives",
+      "Multiple hooks/variations",
+      "Short-form promotional videos",
+      "Conversion-focused creatives",
+      "Creative testing",
     ],
+    image: "/images/services/video-ads.jpg",
   },
   {
     number: "03",
-    title: "Content Strategy & SEO",
-    description:
-      "Thought leadership content and organic growth strategies that establish your brand as the authority in your category. We create content that ranks, converts, and builds trust.",
-    details: [
-      "Content Strategy & Calendar",
-      "SEO Audits & Optimization",
-      "Blog & Long-Form Content",
-      "Case Studies & Whitepapers",
-      "Video Content Strategy",
-      "Podcast Production",
+    title: "Content Creation & Social Media",
+    items: [
+      "Social media content",
+      "Reels/short-form videos",
+      "Content systems",
+      "Marketing creatives",
     ],
+    image: "/images/services/content.jpg",
   },
   {
     number: "04",
-    title: "Brand Strategy & Creative",
-    description:
-      "From positioning to visual identity, we craft brands that create instant recognition and emotional connection. Your brand is your most valuable asset — we treat it that way.",
-    details: [
-      "Brand Positioning & Messaging",
-      "Visual Identity Design",
-      "Website Design & Development",
-      "Sales Collateral",
-      "Presentation Design",
-      "Brand Guidelines",
-    ],
+    title: "Pitch Decks",
+    items: ["Startup pitch decks", "Founder presentations", "Investor-facing presentations"],
+    image: "/images/services/pitch-decks.jpg",
   },
   {
     number: "05",
-    title: "Growth & Conversion Optimization",
-    description:
-      "Data-driven experimentation across every conversion point. We optimize the entire journey from first click to closed-won, maximizing the ROI of every marketing dollar.",
-    details: [
-      "Conversion Rate Optimization",
-      "A/B Testing Programs",
-      "Funnel Analysis",
-      "Product-Led Growth",
-      "Pricing Strategy",
-      "Onboarding Optimization",
-    ],
+    title: "Brand Visuals",
+    items: ["Brand graphics", "Marketing visuals", "Visual storytelling", "Design systems"],
+    image: "/images/services/brand-visuals.jpg",
   },
   {
     number: "06",
-    title: "Analytics & Revenue Operations",
-    description:
-      "We build measurement frameworks that connect marketing activity to revenue. Full visibility from impression to closed-won, with attribution models that actually make sense.",
-    details: [
-      "Marketing Analytics Setup",
-      "Attribution Modeling",
-      "Revenue Dashboard Design",
-      "CRM Optimization",
-      "Marketing Automation",
-      "Data Integration",
+    title: "Marketing Strategy",
+    items: [
+      "Funnel mapping",
+      "Buyer-psychology-based messaging",
+      "Content positioning",
+      "Conversion-focused strategy",
     ],
-  },
-  {
-    number: "07",
-    title: "Web Development",
-    description:
-      "High-performance marketing websites built to convert. Fast, SEO-ready and easy for your team to update, engineered to turn traffic into pipeline.",
-    details: [
-      "Marketing Website Builds",
-      "Next.js & Headless CMS",
-      "Landing Page Systems",
-      "Performance & Core Web Vitals",
-      "Technical SEO",
-      "Analytics & CRM Integration",
-    ],
+    image: "/images/services/strategy.jpg",
   },
 ];
+
+const growthCatalyst = {
+  number: "07",
+  title: "The Growth Catalyst",
+  items: [
+    "7x high-converting ad creatives with tested hooks",
+    "1x 30s promo video",
+    "Custom marketing strategy with funnel mapping + placement guide",
+  ],
+  image: "/images/services/growth-catalyst.jpg",
+};
 
 export default function Services() {
   const heroRef = useRef<HTMLElement>(null);
@@ -186,7 +161,49 @@ export default function Services() {
             </h2>
           </RevealText>
 
-          <ServiceAccordion services={services} theme="dark" />
+          <div className="dm-grid svc-grid">
+            {services.map((service, i) => (
+              <RevealText key={service.number} delay={0.08 * (i % 3)} className="dm-card-wrap">
+                <article className="dm-card svc-card">
+                  <div
+                    className="dm-card__bg"
+                    style={{ backgroundImage: `url(${service.image})` }}
+                    aria-hidden="true"
+                  />
+                  <div className="dm-card__shade" aria-hidden="true" />
+                  <span className="dm-card__badge">{service.number}</span>
+                  <div className="dm-card__body">
+                    <h3 className="dm-card__title">{service.title}</h3>
+                    <ul className="svc-tags">
+                      {service.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              </RevealText>
+            ))}
+
+            <RevealText className="dm-card-wrap svc-wide">
+              <article className="dm-card svc-card svc-card--wide">
+                <div
+                  className="dm-card__bg"
+                  style={{ backgroundImage: `url(${growthCatalyst.image})` }}
+                  aria-hidden="true"
+                />
+                <div className="dm-card__shade" aria-hidden="true" />
+                <span className="dm-card__badge">{growthCatalyst.number}</span>
+                <div className="dm-card__body">
+                  <h3 className="dm-card__title svc-wide__title">{growthCatalyst.title}</h3>
+                  <ol className="svc-deliverables">
+                    {growthCatalyst.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ol>
+                </div>
+              </article>
+            </RevealText>
+          </div>
         </div>
       </section>
 

@@ -8,8 +8,9 @@ import LogoSymbol, { LOGO_GOLD } from "@/components/LogoSymbol";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "SaaS Marketing", href: "/saas-marketing" },
+  { label: "Digital Marketing", href: "/digital-marketing" },
   { label: "Services", href: "/services" },
-  { label: "Work / Case Studies", href: "/work" },
+  { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

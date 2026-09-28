@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollShowcase from "@/components/ScrollShowcase";
 import SectionBackground from "@/components/SectionBackground";
+import HomeHeroLoop from "@/components/HomeHeroLoop";
 import CalendlyButton from "@/components/CalendlyButton";
 import RevealText from "@/components/RevealText";
 
@@ -54,56 +55,10 @@ const services = [
 ];
 
 export default function Home() {
-  const heroRef = useRef<HTMLElement>(null);
-  const heroTextRef = useRef<HTMLDivElement>(null);
-  const heroBgRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLElement>(null);
   const ctaBgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const hero = heroRef.current;
-    const heroText = heroTextRef.current;
-    const heroBg = heroBgRef.current;
-    if (!hero || !heroText || !heroBg) return;
-
-    // Hero parallax zoom on scroll
-    gsap.to(heroBg, {
-      scale: 1.2,
-      scrollTrigger: {
-        trigger: hero,
-        start: "top top",
-        end: "bottom top",
-        scrub: 1,
-      },
-    });
-
-    // Hero text fade out on scroll
-    gsap.to(heroText, {
-      y: -100,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: hero,
-        start: "top top",
-        end: "50% top",
-        scrub: 1,
-      },
-    });
-
-    // Hero text entrance animation
-    const lines = heroText.querySelectorAll(".hero-line");
-    gsap.fromTo(
-      lines,
-      { y: 100, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1.2,
-        stagger: 0.12,
-        ease: "power4.out",
-        delay: 0.3,
-      }
-    );
-
     // CTA background parallax zoom (same motion as ParallaxImage)
     const cta = ctaRef.current;
     const ctaBg = ctaBgRef.current;
@@ -131,69 +86,8 @@ export default function Home() {
 
   return (
     <>
-      {/* ─── Hero ─── */}
-      <section
-        ref={heroRef}
-        className="relative w-full h-screen flex items-center justify-center overflow-hidden"
-        id="hero"
-      >
-        <div
-          ref={heroBgRef}
-          className="absolute inset-0 bg-cover bg-center will-change-transform"
-          style={{ backgroundImage: "url(/images/hero-brand.jpg)", scale: 1 }}
-        />
-        <div className="absolute inset-0 bg-black/50" />
-
-        <div
-          ref={heroTextRef}
-          className="relative z-10 container-vw text-center flex flex-col items-center justify-center mx-auto max-w-4xl"
-        >
-          <div className="hero-line w-full text-center flex flex-col items-center">
-            <h1 className="hero-heading text-display-md md:text-display-lg w-full text-center">
-              WE MAKE SAAS
-            </h1>
-          </div>
-          <div className="hero-line w-full text-center flex flex-col items-center">
-            <h1 className="hero-heading text-display-md md:text-display-lg w-full text-center">
-              BRANDS IMPOSSIBLE
-            </h1>
-          </div>
-          <div className="hero-line w-full text-center flex flex-col items-center">
-            <h1 className="hero-heading text-display-md md:text-display-lg w-full text-center">
-              TO IGNORE
-            </h1>
-          </div>
-          <div className="hero-line mt-8 w-full text-center flex flex-col items-center">
-            <p className="hero-subtext max-w-xl mx-auto text-center">
-              Demand generation. Brand strategy. Growth marketing.
-              <br />
-              For B2B SaaS companies that refuse to blend in.
-            </p>
-          </div>
-          <div
-            className="hero-line flex gap-4 justify-center items-center flex-wrap w-full text-center"
-            style={{ position: "relative", top: "clamp(32px, 4vw, 36px)" }}
-          >
-            <CalendlyButton className="btn-pill hero-btn no-underline">
-              BOOK A CALL <span className="arrow-icon">→</span>
-            </CalendlyButton>
-            <Link
-              href="/work"
-              className="btn-pill hero-btn no-underline"
-            >
-              VIEW WORK <span className="arrow-icon">→</span>
-            </Link>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-          <div className="flex flex-col items-center gap-2 text-white/50">
-            <span className="text-tag">Scroll</span>
-            <div className="w-px h-8 bg-white/30 animate-pulse" />
-          </div>
-        </div>
-      </section>
+      {/* ─── Hero (looping motion graphics) ─── */}
+      <HomeHeroLoop />
 
       {/* ─── Positioning Statement ─── */}
       <section
